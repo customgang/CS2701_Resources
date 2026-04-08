@@ -22,6 +22,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import com.example.demo.Models.UserType;
 
 //Let's create a simple User class
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "Users")
 @EntityListeners(AuditingEntityListener.class)
@@ -46,11 +47,13 @@ public class User implements Serializable {
 	@Column(nullable = false)
 	UserType userType;
 	
+	@SuppressWarnings("deprecation")
 	@Column(nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreatedDate
 	private Date createdAt;
 
+	@SuppressWarnings("deprecation")
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
